@@ -4,7 +4,7 @@
       <i class="material-icons">star_border</i>
     <% end %>
   <% else %>
-    <%= link_to unfavorite_blog_path(blog), method: :delete, remote: true, class: "favorite-link delete-#{blog.id}" do %>
+    <%= link_to unfavorite_blog_path(blog), method: :delete, remote: true, class: "favorite-link post-#{blog.id}" do %>
       <i class="material-icons">star</i>
     <% end %>
   <% end %>
