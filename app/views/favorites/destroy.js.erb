@@ -1,0 +1,3 @@
+$('#favorite_area_<%= @blog.id %>').html('<%= j render partial: "blogs/favorite", locals: { blog: @blog } %>');
+$('#favorite-count-<%= @blog.id %>').text('<%= @blog.favorites.count %>');
+

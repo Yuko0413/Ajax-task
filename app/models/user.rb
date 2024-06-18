@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :blogs
+
+  def favorited?(blog)
+    favorites.exists?(blog: blog)
+  end
 end
+
