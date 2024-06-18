@@ -1,11 +1,11 @@
 <div id="favorite_area_<%= blog.id %>">
-  <% if !current_user.favorited?(blog) %>
-    <%= link_to favorite_blog_path(blog), method: :post, remote: true, class: "favorite-link create-#{blog.id}" do %>
-      <i class="material-icons">star_border</i>
+  <% if current_user.favorited?(blog) %>
+    <%= link_to unfavorite_blog_path(blog), method: :delete, remote: true, class: "favorite-link delete-#{blog.id}" do %>
+    <i class="material-icons">star</i>
     <% end %>
   <% else %>
-    <%= link_to unfavorite_blog_path(blog), method: :delete, remote: true, class: "favorite-link post-#{blog.id}" do %>
-      <i class="material-icons">star</i>
+    <%= link_to favorite_blog_path(blog), method: :post, remote: true, class: "favorite-link post-#{blog.id}" do %>
+    <i class="material-icons">star_border</i>
     <% end %>
   <% end %>
   <span id="favorite-count-<%= blog.id %>"><%= blog.favorites.count %></span>
